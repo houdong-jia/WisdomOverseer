@@ -40,7 +40,11 @@ Vue.component("dataStatistics", {
             :value="index"
             :class="item.name==='督办事项'?'dbsx':(item.name==='进行中'?'under':(item.name==='已完成'?'complete':'outTime'))"
             >
-                <div class="item-icon " id="sxtjIcon"/>
+                <div class="item-icon " id="sxtjIcon">
+                    <div class="item-icon-top" />
+                    <div class="item-icon-h1" />
+                    <div class="item-icon-h2" />
+                </div>
                 <div class="list-item-name">{{item.name}}</div>
                 <div class="list-item-data">{{item.data}}</div>
             </div>

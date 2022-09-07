@@ -1,4 +1,65 @@
 Vue.component("dataAnalysis", {
+
+    template: `
+    <div class="ana-container">
+        <div class="headerText">数据分析</div>
+        <div class="headerBottom">
+            <div class="headerLeftLine"></div>
+            <div class="headerLine"></div>
+        </div>
+        <div class="data-show">
+            <div class="left-data">
+                <div class="legend">
+                    <div class="PercentageData">
+                      25%
+                  </div>
+                  <div class="legendName">
+                      数据指标3
+                  </div>
+                  <div class="legendIcon" style="background-color: rgb(51,214,149)"></div>
+                </div>
+            <div class="legend">
+                <div class="PercentageData">
+                    25%
+                </div>
+                <div class="legendName">
+                    数据指标4
+                </div>
+                <div class="legendIcon" style="background-color: rgb(5,160,154)"></div>
+            </div>
+            </div>
+            <div class="center-data">
+                <div id="dataPieChart"></div>
+                <img src="./images/bing-bg.png">
+            </div>
+            <div class="right-data">
+                <div class="legend">
+                    <div class="PercentageData">
+                        25%
+                    </div>
+                    <div class="legendName">
+                        经济运行指标
+                    </div>
+                <div class="legendIcon" style="background-color: rgb(247,181,0)"></div>
+            </div>
+            <div class="legend">
+                <div class="PercentageData">
+                    25%
+                </div>
+                <div class="legendName">
+                    数据指标2
+                </div>
+                <div class="legendIcon" style="background-color: rgb(37,134,245)"></div>
+        </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="btn" @click="">经济运行指标</div>
+            <div class="btn" @click="">预留</div>
+            <div class="btn" @click="">预留</div>
+            <div class="btn" @click="">预留</div>
+        </div>
+    </div>`,
     data() {
         return {
             dataA: [
@@ -53,71 +114,12 @@ Vue.component("dataAnalysis", {
                 this.isSeleted = true;
             };
             btnList[i].onmouseout = function () {
-                btnList[0].style.backgroundImage = "url('./images/tab-xz.png')";
-                btnList[i].style.backgroundImage = "url('./images/tab.png')";
-                this.isSeleted = false;
+                if (i !== 0){
+                    btnList[0].style.backgroundImage = "url('./images/tab-xz.png')";
+                    btnList[i].style.backgroundImage = "url('./images/tab.png')";
+                    this.isSeleted = false;
+                }
             };
         }
-    },
-    template: `
-    <div class="ana-container">
-        <div class="headerText">数据分析</div>
-        <div class="headerBottom">
-            <div class="headerLeftLine"></div>
-            <div class="headerLine"></div>
-        </div>
-        <div class="data-show">
-            <div class="left-data">
-                <div class="legend">
-                    <div class="PercentageData">
-                        25%
-                    </div>
-                    <div class="legendName">
-                        经济运行指标
-                    </div>
-                    <div class="legendIcon" style="background-color: rgb(247,181,0)"></div>
-                </div>
-                <div class="legend">
-                    <div class="PercentageData">
-                        25%
-                    </div>
-                    <div class="legendName">
-                        数据指标2
-                    </div>
-                    <div class="legendIcon" style="background-color: rgb(37,134,245)"></div>
-                </div>
-            </div>
-            <div class="center-data" id="dataPieChart">
-
-            </div>
-            <div class="right-data">
-
-                <div class="legend">
-                    <div class="PercentageData">
-                        25%
-                    </div>
-                    <div class="legendName">
-                        数据指标3
-                    </div>
-                    <div class="legendIcon" style="background-color: rgb(5,160,154)"></div>
-                </div>
-                <div class="legend">
-                    <div class="PercentageData">
-                        25%
-                    </div>
-                    <div class="legendName">
-                        数据指标4
-                    </div>
-                    <div class="legendIcon" style="background-color: rgb(51,214,149)"></div>
-                </div>
-            </div>
-        </div>
-        <div class="buttons">
-            <div class="btn" @click="">经济运行指标</div>
-            <div class="btn" @click="">预留</div>
-            <div class="btn" @click="">预留</div>
-            <div class="btn" @click="">预留</div>
-        </div>
-    </div>`
-
+    }
 })

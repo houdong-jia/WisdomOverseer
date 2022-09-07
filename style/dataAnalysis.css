@@ -80,10 +80,31 @@
     border-radius: 50%;
 }
 
+.center-data{
+    position: relative;
+}
+
 #dataPieChart {
     width: 186px;
     height: 186px;
-    background-image: url(../images/bing-bg.png);
+    z-index: 1;
+}
+
+.center-data img{
+    position:absolute;
+    top: 0;
+    width: 186px;
+    height: 186px;
+    animation: imgRote 8s cubic-bezier(0.31, 0.31, 0.56, 0.55) infinite;
+}
+
+@keyframes imgRote {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .buttons {
@@ -147,6 +168,7 @@
     margin: 12px 20px 12px 36px;
     width: 60px;
     height: 50px;
+    position: relative;
     animation: iconIn 1.5s 1;
 }
 
@@ -164,23 +186,105 @@
     }
 }
 
-.dbsx .item-icon {
+.item-icon-top{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 18.5px;
+    z-index: 3;
+    animation: iconUpDown 2s 1.5s infinite;
+}
+
+@keyframes iconUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.item-icon-h1{
+    width: 60px;
+    height: 35px;
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+}
+
+.item-icon-h2{
+    width: 45px;
+    height: 22.5px;
+    top: 10px;
+    left: 7px;
+    position: absolute;
+    z-index: 2;
+    animation: iconUpDown 2s 1.5s infinite;
+}
+
+.dbsx .item-icon-top {
     background-image: url("../images/i-duban.png");
     background-repeat: no-repeat;
 }
 
-.under .item-icon {
+.under .item-icon-top {
     background-image: url("../images/i-jinxing.png");
     background-repeat: no-repeat;
+    left: 20.5px;
 }
 
-.complete .item-icon {
+.complete .item-icon-top {
     background-image: url("../images/i-wancheng.png");
     background-repeat: no-repeat;
 }
 
-.outTime .item-icon {
+.outTime .item-icon-top {
     background-image: url("../images/i-chaoshi.png");
+    background-repeat: no-repeat;
+}
+
+.dbsx .item-icon-h1 {
+    background-image: url("../images/h1-duban.png");
+    background-repeat: no-repeat;
+}
+
+.under .item-icon-h1 {
+    background-image: url("../images/h1-jinxing.png");
+    background-repeat: no-repeat;
+}
+
+.complete .item-icon-h1 {
+    background-image: url("../images/h1-wancheng.png");
+    background-repeat: no-repeat;
+}
+
+.outTime .item-icon-h1 {
+    background-image: url("../images/h1-chaoshi.png");
+    background-repeat: no-repeat;
+}
+
+.dbsx .item-icon-h2 {
+    background-image: url("../images/h2-duban.png");
+    background-repeat: no-repeat;
+}
+
+.under .item-icon-h2 {
+    background-image: url("../images/h2-jinxing.png");
+    background-repeat: no-repeat;
+}
+
+.complete .item-icon-h2 {
+    background-image: url("../images/h2-wancheng.png");
+    background-repeat: no-repeat;
+}
+
+.outTime .item-icon-h2 {
+    background-image: url("../images/h2-chaoshi.png");
     background-repeat: no-repeat;
 }
 
@@ -206,11 +310,11 @@
 }
 
 .dbsx .list-item-data {
-    color: #FF5A00;
+    color: #31E8FF;
 }
 
 .under .list-item-data {
-    color: #09DEF5;
+    color: #D8BE42;
 }
 
 .complete .list-item-data {
@@ -218,15 +322,15 @@
 }
 
 .outTime .list-item-data {
-    color: #FEE154;
+    color: #FB3F3F;
 }
 
 .dbsx .list-item-name {
-    color: #FF5A00;
+    color: #31E8FF;
 }
 
 .under .list-item-name {
-    color: #09DEF5;
+    color: #D8BE42;
 }
 
 .complete .list-item-name {
@@ -234,7 +338,7 @@
 }
 
 .outTime .list-item-name {
-    color: #FEE154;
+    color: #FB3F3F;
 }
 
 /* 
