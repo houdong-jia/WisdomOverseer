@@ -19,6 +19,9 @@
   <script src="./components/inspectionReport.js"></script>
 </head>
 <body>
+  <div id="particles-js" style="display: flex;align-items: center;justify-content: center">
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="472" height="625"></canvas>
+  </div>
   <div id="app">
     <Layout>
       <template slot="left">
@@ -35,6 +38,8 @@
     </Layout>
     
   </div>
+  <script src="./js/particles.js"></script>
+  <script src="./js/particlesApp.js"></script>
   <script>
     var app = new Vue({
       el:"#app"
