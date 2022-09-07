@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智慧督办</title>
+  <link rel="stylesheet" type="text/css" href="./style/common.css"/>
+  <link rel="stylesheet" type="text/css" href="./style/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="./style/centerCard.css"/>
+  <link rel="stylesheet" type="text/css" href="./style/dataAnalysis.css"/>
+  <script src="./js/vue.min.js"></script>
+  <script src="./js/echarts.min.js"></script>
+  <script src="./components/layout.js"></script>
+  <script src="./components/centerCard.js"></script>
+  <script src="./components/dataAnalysis.js"></script>
+  <script src="./components/dataStatistics.js"></script>
+  <script src="./components/mainTask.js"></script>
+  <script src="./components/inspectionReport.js"></script>
+</head>
+<body>
+  <div id="app">
+    <Layout>
+      <template slot="left">
+        <data-analysis></data-analysis>
+        <main-task style="margin-top:30px"></main-task>
+      </template>
+      <template slot="center">
+        <center-card></center-card>
+      </template>
+      <template slot="right">
+        <data-statistics></data-statistics>
+        <inspection-report style="margin-top:30px"></inspection-report>
+      </template>
+    </Layout>
+    
+  </div>
+  <script>
+    var app = new Vue({
+      el:"#app"
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+/* 
+数据分析
+*/
+.ana-container {
+    width: 100%;
+    height: 456px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 17px 20px 23px 20px;
+    background: rgba(10, 39, 99, 0.5);
+}
+
+.headerText {
+    font-family: PingFang-SC-Heavy;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 11px;
+}
+
+.headerBottom {
+    display: flex;
+    margin-bottom: 36px;
+}
+
+.headerLeftLine {
+    width: 36px;
+    border-bottom: 4px solid #31E8FF;
+}
+
+.headerLine {
+    width: 334px;
+    opacity: 0.3;
+    border-bottom: 1px solid #31E8FF;
+}
+
+
+.data-show {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.left-data .legend {
+    align-items: flex-start;
+}
+
+.right-data .legend {
+    align-items: flex-end;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.PercentageData {
+    font-family: Digiface;
+    font-size: 20px;
+    color: #31E8FF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.legendName {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.legendIcon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+#dataPieChart {
+    width: 186px;
+    height: 186px;
+    background-image: url(../images/bing-bg.png);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    cursor: pointer;
+}
+
+.btn {
+    margin-bottom: 24px;
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 174px;
+    height: 46px;
+    background-image: url("../images/tab.png");
+    background-repeat: no-repeat;
+    padding: 12px 0;
+    user-select: none;
+}
+
+
+/* 
+数据统计
+*/
+.sta-container {
+    width: 100%;
+    height: 456px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 17px 20px 23px 20px;
+    background: rgba(10, 39, 99, 0.5);
+}
+
+.list {
+    margin: -17px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    display: flex;
+    background-image: url("../images/r1-bg.png");
+    background-repeat: no-repeat;
+    width: 370px;
+    height: 76px;
+    margin-bottom: 16px;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background-image: url("../images/r1-bg-xz.png");
+}
+
+.item-icon {
+    margin: 12px 20px 12px 36px;
+    width: 60px;
+    height: 50px;
+    animation: iconIn 1.5s 1;
+}
+
+@keyframes iconIn {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dbsx .item-icon {
+    background-image: url("../images/i-duban.png");
+    background-repeat: no-repeat;
+}
+
+.under .item-icon {
+    background-image: url("../images/i-jinxing.png");
+    background-repeat: no-repeat;
+}
+
+.complete .item-icon {
+    background-image: url("../images/i-wancheng.png");
+    background-repeat: no-repeat;
+}
+
+.outTime .item-icon {
+    background-image: url("../images/i-chaoshi.png");
+    background-repeat: no-repeat;
+}
+
+.list-item-name {
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: -0.01px;
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.list-item-data {
+    width: 55px;
+    height: 75px;
+    line-height: 75px;
+    font-family: Digiface;
+    font-size: 30px;
+    letter-spacing: 0;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.dbsx .list-item-data {
+    color: #FF5A00;
+}
+
+.under .list-item-data {
+    color: #09DEF5;
+}
+
+.complete .list-item-data {
+    color: #0BDC8C;
+}
+
+.outTime .list-item-data {
+    color: #FEE154;
+}
+
+.dbsx .list-item-name {
+    color: #FF5A00;
+}
+
+.under .list-item-name {
+    color: #09DEF5;
+}
+
+.complete .list-item-name {
+    color: #0BDC8C;
+}
+
+.outTime .list-item-name {
+    color: #FEE154;
+}
+
+/* 
+重点工作
+*/
+.task-container {
+    width: 100%;
+    height: 466px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 17px 20px 23px 20px;
+    background: rgba(10, 39, 99, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerMore {
+    width: 34px;
+    height: 20px;
+    background-image: url("../images/more.png");
+    background-repeat: no-repeat;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.task-list {
+    margin-top: -15px;
+}
+
+.task-item {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    padding-bottom: 11.5px;
+    padding-top: 12.5px;
+    display: flex;
+    border-bottom: 1px dashed rgba(42, 137, 239, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.task-item:hover {
+    background: rgba(8, 20, 66, 0.60);
+    border: 1px solid #2A89EF;
+    box-shadow: 0 0 10px 0 #1B61AC, inset 0 0 12px 0 #0091FF;
+}
+
+.task-item-icon {
+    width: 5px;
+    height: 5px;
+    background-color: rgb(20, 152, 249);
+    border-radius: 50%;
+    margin: 9px 12px 4px 1px;
+}
+
+/* 
+督查专报
+*/
+
+.ins-container {
+    width: 100%;
+    height: 466px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 17px 20px 23px 20px;
+    background: rgba(10, 39, 99, 0.5);
+}
+
+.ins-list {
+    margin-top: -15px;
+}
+
+.ins-item {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    padding-bottom: 11.5px;
+    padding-top: 12.5px;
+    border-bottom: 1px dashed rgba(42, 137, 239, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.ins-item:hover {
+    background: rgba(8, 20, 66, 0.60);
+    border: 1px solid #2A89EF;
+    box-shadow: 0 0 10px 0 #1B61AC, inset 0 0 12px 0 #0091FF;
+}
+
+.ins-item-type {
+    display: inline-block;
+}
+
+.zdgz::before {
+    content: "【重点工作】";
+    width: 96px;
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FF5943;
+    letter-spacing: 0;
+}
+
+.ldps::before {
+    content: "【领导批示】";
+    width: 96px;
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FAC52A;
+    letter-spacing: 0;
+}
+
+.hyjbsx::before {
+    content: "【会议交办事项】";
+    width: 128px;
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #31FFD3;
+    letter-spacing: 0;
+}
