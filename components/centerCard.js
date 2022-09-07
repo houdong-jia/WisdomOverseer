@@ -8,7 +8,12 @@ Vue.component("centerCard", {
               <div class="map-desc" title="总书记视察东营任务台账">总书记视察东营任务台账</div>
               <div class="map-num">20/14</div>
             </div>
-            <img src="./images/map-l-t.png" />
+            <img src="./images/map-l-t.png"></>
+            <div class="map-progress">
+              <ul>
+                <li v-for="(item,i) in 20" :key="i"></li>
+              </ul>
+            </div>
           </div>
           <div class="map-l-b">
             <div class="map-data">
@@ -16,10 +21,17 @@ Vue.component("centerCard", {
               <div class="map-num">15/10</div>
             </div>
             <img src="./images/map-l-b.png" />
+            <div class="map-progress">
+              <ul>
+                <li v-for="(item,i) in 20" :key="i"></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="center-card-map-ring">
-          <img src="./images/map-ring.png" />
+          <img class="map-main" src="./images/map.png" />
+          <img class="map-inner" src="./images/map-inner.png" />
+          <img class="map-outer" src="./images/map-outer.png" />
         </div>
         <div class="center-card-map-right">
           <div class="map-r-t">
@@ -28,6 +40,11 @@ Vue.component("centerCard", {
               <div class="map-num">30/20</div>
             </div>
             <img src="./images/map-r-t.png" />
+            <div class="map-progress">
+              <ul>
+                <li v-for="(item,i) in 20" :key="i"></li>
+              </ul>
+            </div>
           </div>
           <div class="map-r-b">
             <div class="map-data">
@@ -35,6 +52,11 @@ Vue.component("centerCard", {
               <div class="map-num">20/14</div>
             </div>
             <img src="./images/map-r-b.png" />
+            <div class="map-progress">
+              <ul>
+                <li v-for="(item,i) in 20" :key="i"></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +123,31 @@ Vue.component("centerCard", {
     </div>
   `,
   mounted() {
+
+    xTrans =  [];
+    anime.set('.map-progress li',{
+      translateX: function(el, i, l) {
+        xTrans[i]={x : i * 10};
+        return i * 10;
+      },
+    });
+    
+    anime({
+      targets: xTrans,
+      duration: 3000,
+      easing: 'linear',
+      x: "+=80",
+      loop: true,
+      update: function(anim) {
+          anime.set('.map-progress li', {
+            translateX:function(el, i, l){
+                return xTrans[i].x%80
+              }
+          });
+      }
+    })
+
+
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('center-card-line-main'));
     // 指定图表的配置项和数据

@@ -48,9 +48,30 @@
   position: relative;
 }
 
+.center-card-map-left .map-progress,
+.center-card-map-right .map-progress {
+  position: absolute;
+  width: 158px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.center-card-map-left .map-progress ul,
+.center-card-map-right .map-progress ul {
+  display: flex;
+  position: relative; 
+  margin-left: -20px;
+}
+.center-card-map-left li,
+.center-card-map-right li {
+  height: 10px;
+  width: 6px;
+  background: rgb(65, 138, 241);
+  text-align: center;
+}
+
 .center-card-map-left img,
 .center-card-map-right img {
-  position: absolute;
   width: 100%;
   cursor: pointer;
 }
@@ -61,10 +82,13 @@
   display: flex;
   flex-direction: column;
   animation: leftImage 1.5s 1;
+  position: relative;
 }
 
 .center-card-map-left>div:first-child {
-  flex: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .center-card-map-left>div:first-child img {
@@ -72,14 +96,21 @@
   left: 0;
 }
 
+
 .center-card-map-left>div:first-child .map-data {
   position: absolute;
-  top: 21%;
+  top: 20%;
   left: 24%;
+}
+.center-card-map-left>div:first-child .map-progress {
+  bottom: 18%;
+  right: 16%;
 }
 
 .center-card-map-left>div:last-child {
-  flex: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .center-card-map-left>div:last-child img {
@@ -89,8 +120,13 @@
 
 .center-card-map-left>div:last-child .map-data {
   position: absolute;
-  bottom: 12%;
+  bottom: 20%;
   left: 24%;
+}
+
+.center-card-map-left>div:last-child .map-progress {
+  top: 15%;
+  right: 16%;
 }
 
 .center-card-map-ring {
@@ -98,10 +134,32 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.center-card-map-ring>img {
+.center-card-map-ring .map-outer {
   width: 100%;
+  animation:fadenum 5s linear infinite;
+}
+
+.map-main {
+  position: absolute;
+  width: 54%;
+  animation:fadenum 5s linear infinite;
+}
+
+.map-inner {
+  position: absolute;
+  width: 70%;
+  animation:unfadenum 5s linear infinite;
+}
+
+@keyframes fadenum{
+  100%{transform:rotate(360deg);}
+}
+@keyframes unfadenum{
+  100%{transform:rotate(-360deg);}
 }
 
 .center-card-map-right {
@@ -110,10 +168,13 @@
   display: flex;
   flex-direction: column;
   animation: rightImage 1.5s 1;
+  position: relative;
 }
 
 .center-card-map-right>div:first-child {
-  flex: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .center-card-map-right>div:first-child img {
@@ -128,8 +189,15 @@
   text-align: right;
 }
 
+.center-card-map-right>div:first-child .map-progress {
+  bottom: 18%;
+  left: 13%;
+}
+
 .center-card-map-right>div:last-child {
-  flex: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .center-card-map-right>div:last-child img {
@@ -139,9 +207,14 @@
 
 .center-card-map-right>div:last-child .map-data {
   position: absolute;
-  bottom: 12%;
+  bottom: 20%;
   right: 24%;
   text-align: right;
+}
+
+.center-card-map-right>div:last-child .map-progress {
+  top: 15%;
+  left: 13%;
 }
 
 .center-card-map .map-desc {
